@@ -1,0 +1,18 @@
+gendet.c - Deterministic
+genunifc.c - Uniform (continuous)
+genunifd.c - Uniform (discrete)
+genpeak.c - Peaked
+gennorm.c - Normal
+genexp.c - Exponential
+gengeo.c - Geometric
+genpois.c - Poisson
+genbin.c - Binomial
+generl.c - Erlang
+genhyp1.c - Hyperexponential for lambdas and p1
+genhyp2.c - Hyperexponential for mean lambda and CoV
+genipp.c - Interrupted Poisson Process (IPP)
+genpar1.c - Pareto
+genpar2.c - Bounded Pareto
+genzipf.c - Zipf
+genemp.c - Empirical
+genuniq.c - Unique random integers 
