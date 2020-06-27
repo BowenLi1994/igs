@@ -36,8 +36,13 @@ node::Node<BracketNotationParser::Label> BracketNotationParser::parse_single(
     if(depth_couter>max_depth)
         max_depth=depth_couter;
    // Iterate all remaining tokens.
+    
+    std::string last_string;
     while (tokens_begin != tokens_end) {
         match_str = *tokens_begin;
+        if(match_str!=kLeftBracket && match_str!=kRightBracket){
+            break;
+        }
 
         if (match_str == kLeftBracket) { // Enter node.
             ++tokens_begin; // Advance tokens to label.
@@ -67,6 +72,7 @@ node::Node<BracketNotationParser::Label> BracketNotationParser::parse_single(
      //n.add_parent(node_stack.back().get());
      node_stack.push_back(std::ref(node_stack.back().get().add_child(n)));
      }
+        
 
      if (match_str == kRightBracket) { // Exit node.
        node_stack.pop_back();

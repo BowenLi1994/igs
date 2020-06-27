@@ -15,7 +15,7 @@
 namespace gen_random{
 
 
-const std::string file_path="/Users/brandonli/Desktop/random/";
+const std::string file_path="/Users/brandonli/Desktop/";
 const std::string sample_banner="-->Generating samples to file                 ";
 const std::string done_banner="-->Done                                       ";
 const double PI=3.14159265;
@@ -35,7 +35,7 @@ long rand_vald(int seed);
 
 
 void open_file(std::ofstream &fp, std::string file_name){
-    fp.open(file_path+file_name);
+    fp.open(file_path+file_name,std::ios_base::app);
     if(!fp.is_open()){
       std::cout<<"Cannot creat output file: "<<file_name<<"!"<<std::endl;
       return;

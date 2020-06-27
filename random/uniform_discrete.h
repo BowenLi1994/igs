@@ -33,11 +33,11 @@ void uniform_d(std::string file_name,int seed_num,double min,double max,int num_
     std::ofstream fp;
     int      unif_rv;             // Uniformly random variable
 
-    std::cout<<"-->Generate discrete uniform                  "<<std::endl;
+    //std::cout<<"-->Generate discrete uniform                  "<<std::endl;
     gen_random::open_file(fp, file_name);
     gen_random::rand_vald(seed_num);
     
-    std::cout<<gen_random::sample_banner<<std::endl;
+    //std::cout<<gen_random::sample_banner<<std::endl;
 
 
  
@@ -45,11 +45,12 @@ void uniform_d(std::string file_name,int seed_num,double min,double max,int num_
     for (int i=0; i<num_values; i++){
         unif_rv = unifd(min, max);
         fp<<unif_rv;
-        fp<<"\n";
+        fp<<"\t";
     }
 
+    fp<<"\n";
     
-    std::cout<<gen_random::done_banner<<std::endl;
+    //std::cout<<gen_random::done_banner<<std::endl;
     fp.close();
 
 }
