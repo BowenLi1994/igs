@@ -44,6 +44,12 @@ node::Node<BracketNotationParser::Label> BracketNotationParser::parse_single(
             break;
         }
 
+        if(match_str!=kLeftBracket && match_str!=kRightBracket){
+            break;
+        }
+
+
+
         if (match_str == kLeftBracket) { // Enter node.
             ++tokens_begin; // Advance tokens to label.
             match_str = *tokens_begin;
@@ -97,11 +103,11 @@ void BracketNotationParser::parse_collection(
   }
   // Read the trees line by line, parse, and move into the container.
   std::string tree_string;
-  //int tree_counter=1;
+  int tree_counter=1;
   while (std::getline(trees_file, tree_string)) {
     trees_collection.push_back(parse_single(tree_string)); // -> This invokes a move constructor (due to push_back(<rvalue>)).
-   // std::cout<<"tree: "<<tree_counter<<std::endl;
-    //tree_counter++;
+   std::cout<<"tree: "<<tree_counter<<std::endl;
+    tree_counter++;
   }
   trees_file.close();
 }
