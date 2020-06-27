@@ -14,7 +14,7 @@
 #include "../node/node.h"
 #include "../label/string_label.h"
 #include "../other/bfunction.h"
-
+#include "../parser/bracket_notation_parser.h"
 
 int main(int argc, const char * argv[]) {
     
@@ -43,9 +43,10 @@ int main(int argc, const char * argv[]) {
 
     
     analyzer:: Analyzer anly;
+    parser::BracketNotationParser bnp;
 
     std::vector<Node> trees_collection;
-    anly.parse_collection(trees_collection,trees_filepath);
+    bnp.parse_collection(trees_collection,trees_filepath);
         
    // anly.parse_collection(trees_collection, file_path);
     anly.analyze_trees(trees_collection);
