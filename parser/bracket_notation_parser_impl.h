@@ -44,10 +44,6 @@ node::Node<BracketNotationParser::Label> BracketNotationParser::parse_single(
             break;
         }
 
-        if(match_str!=kLeftBracket && match_str!=kRightBracket){
-            break;
-        }
-
 
 
         if (match_str == kLeftBracket) { // Enter node.
